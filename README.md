@@ -10,3 +10,8 @@ Table means are averages of per-seed scores rounded to two decimals, so recomput
 ## Known gaps in this release
 - Table XVII (Tamil-English control): prediction files were not retained; the reported values are in the paper.
 - Table III (lexicon tests, earlier recipe): prediction files are not part of this release.
+
+## Code
+- `code/*.ipynb` — notebooks that trained and analysed the models (the main experiments and the Tamil-English control).
+- `code/lexicon_reference.py` — reference implementation of the lexicon construction in Section IV: the 49 seeds of Table XVIII and the matching rule. Written for this release from the settings of the original script; it is not the original run code.
+- `code/verify_tables.py` — recomputes Table VIII from `predictions/`.
