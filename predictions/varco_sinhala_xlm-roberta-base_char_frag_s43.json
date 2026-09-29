@@ -1,14 +1,14 @@
 {
   "dataset": "sinhala",
   "model": "xlm-roberta-base",
-  "config": "cls",
-  "run": "cls",
-  "seed": 44,
+  "config": "char_frag",
+  "run": "char_frag",
+  "seed": 43,
   "args": {
     "mode": "train",
     "dataset": "sinhala",
     "model": "xlm-roberta-base",
-    "config": "cls",
+    "config": "char_frag",
     "seeds": [
       42,
       43,
@@ -39,120 +39,120 @@
   "folds": [
     {
       "fold": 1,
-      "seed": 44,
-      "val_macro_f1": 71.92,
+      "seed": 43,
+      "val_macro_f1": 74.31,
       "epoch": 3,
       "collapsed": false,
-      "gate": null,
-      "sec_per_epoch": 134.3
+      "gate": 0.1541,
+      "sec_per_epoch": 144.6
     },
     {
       "fold": 2,
-      "seed": 44,
-      "val_macro_f1": 73.46,
+      "seed": 43,
+      "val_macro_f1": 73.0,
       "epoch": 3,
       "collapsed": false,
-      "gate": null,
-      "sec_per_epoch": 134.2
+      "gate": 0.1906,
+      "sec_per_epoch": 144.4
     },
     {
       "fold": 3,
-      "seed": 44,
-      "val_macro_f1": 71.33,
-      "epoch": 3,
-      "collapsed": false,
-      "gate": null,
-      "sec_per_epoch": 135.0
-    },
-    {
-      "fold": 4,
-      "seed": 44,
+      "seed": 43,
       "val_macro_f1": 72.95,
       "epoch": 3,
       "collapsed": false,
-      "gate": null,
-      "sec_per_epoch": 134.3
+      "gate": 0.1981,
+      "sec_per_epoch": 144.5
+    },
+    {
+      "fold": 4,
+      "seed": 43,
+      "val_macro_f1": 73.6,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1769,
+      "sec_per_epoch": 144.3
     },
     {
       "fold": 5,
-      "seed": 44,
-      "val_macro_f1": 70.17,
-      "epoch": 2,
+      "seed": 43,
+      "val_macro_f1": 72.96,
+      "epoch": 3,
       "collapsed": false,
-      "gate": null,
-      "sec_per_epoch": 134.2
+      "gate": 0.15,
+      "sec_per_epoch": 144.3
     }
   ],
   "test": {
-    "acc": 79.35,
-    "macro_f1": 73.77,
-    "weighted_f1": 79.53,
-    "macro_p": 73.01,
-    "macro_r": 74.71,
+    "acc": 80.5,
+    "macro_f1": 75.11,
+    "weighted_f1": 80.7,
+    "macro_p": 74.37,
+    "macro_r": 76.12,
     "per_class": {
       "Neutral": {
-        "P": 86.38,
-        "R": 82.09,
-        "F1": 84.18
+        "P": 88.03,
+        "R": 82.64,
+        "F1": 85.25
       },
       "Negative": {
-        "P": 70.08,
-        "R": 77.66,
-        "F1": 73.68
+        "P": 70.3,
+        "R": 80.22,
+        "F1": 74.94
       },
       "Positive": {
-        "P": 62.57,
-        "R": 64.37,
-        "F1": 63.46
+        "P": 64.77,
+        "R": 65.52,
+        "F1": 65.14
       }
     },
     "confusion": [
       [
-        1059,
-        171,
-        60
+        1066,
+        173,
+        51
       ],
       [
-        115,
-        424,
-        7
+        97,
+        438,
+        11
       ],
       [
-        52,
-        10,
-        112
+        48,
+        12,
+        114
       ]
     ]
   },
   "robust": {
     "var_id": {
-      "macro_f1": 73.8,
-      "flip": 9.21,
+      "macro_f1": 74.95,
+      "flip": 7.46,
       "n_changed": 228
     },
     "var_ood": {
-      "macro_f1": 73.67,
-      "flip": 7.52,
+      "macro_f1": 74.88,
+      "flip": 9.02,
       "n_changed": 133
     },
     "charnoise": {
-      "macro_f1": 72.6,
-      "flip": 8.33,
+      "macro_f1": 73.99,
+      "flip": 6.99,
       "n_changed": 744
     }
   },
   "by_script": {
     "latin": {
       "n": 1440,
-      "macro_f1": 73.05
+      "macro_f1": 75.42
     },
     "mixed": {
       "n": 269,
-      "macro_f1": 73.73
+      "macro_f1": 72.99
     },
     "native": {
       "n": 298,
-      "macro_f1": 78.2
+      "macro_f1": 74.29
     },
     "other": {
       "n": 3,

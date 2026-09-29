@@ -1,0 +1,80 @@
+{
+  "dataset": "sinhala",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "config": "llm",
+  "run": "llm_k4",
+  "seed": 0,
+  "args": {
+    "mode": "llm",
+    "dataset": "sinhala",
+    "model": "xlm-roberta-base",
+    "config": "full",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": false,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2,
+    "pairs": [],
+    "boot": 5000,
+    "llm": "Qwen/Qwen2.5-7B-Instruct",
+    "shots": 4
+  },
+  "test": {
+    "acc": 55.02,
+    "macro_f1": 51.38,
+    "weighted_f1": 56.46,
+    "macro_p": 52.54,
+    "macro_r": 63.27,
+    "per_class": {
+      "Neutral": {
+        "P": 82.53,
+        "R": 43.57,
+        "F1": 57.03
+      },
+      "Negative": {
+        "P": 51.33,
+        "R": 77.84,
+        "F1": 61.86
+      },
+      "Positive": {
+        "P": 23.75,
+        "R": 68.39,
+        "F1": 35.26
+      }
+    },
+    "confusion": [
+      [
+        562,
+        378,
+        350
+      ],
+      [
+        89,
+        425,
+        32
+      ],
+      [
+        30,
+        25,
+        119
+      ]
+    ]
+  }
+}

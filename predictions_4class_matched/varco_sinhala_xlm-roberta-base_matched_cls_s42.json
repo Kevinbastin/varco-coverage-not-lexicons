@@ -1,0 +1,125 @@
+{
+  "dataset": "sinhala",
+  "model": "xlm-roberta-base",
+  "config": "cls",
+  "run": "matched_cls",
+  "seed": 42,
+  "protocol": "matched_80_10_10_single_model",
+  "args": {
+    "dataset": "sinhala",
+    "model": "xlm-roberta-base",
+    "config": "cls",
+    "seeds": [
+      8,
+      42,
+      77
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "test": {
+    "acc": 75.15,
+    "macro_f1": 58.07,
+    "weighted_f1": 75.85,
+    "macro_p": 55.69,
+    "macro_r": 61.65,
+    "per_class": {
+      "Neutral": {
+        "P": 87.17,
+        "R": 76.63,
+        "F1": 81.56
+      },
+      "Negative": {
+        "P": 65.73,
+        "R": 77.47,
+        "F1": 71.12
+      },
+      "Positive": {
+        "P": 47.65,
+        "R": 61.74,
+        "F1": 53.79
+      },
+      "Conflict": {
+        "P": 22.22,
+        "R": 30.77,
+        "F1": 25.81
+      }
+    },
+    "confusion": [
+      [
+        659,
+        129,
+        69,
+        3
+      ],
+      [
+        65,
+        282,
+        7,
+        10
+      ],
+      [
+        31,
+        12,
+        71,
+        1
+      ],
+      [
+        1,
+        6,
+        2,
+        4
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 58.07,
+      "flip": 8.9,
+      "n_changed": 146
+    },
+    "var_ood": {
+      "macro_f1": 58.33,
+      "flip": 18.75,
+      "n_changed": 64
+    },
+    "charnoise": {
+      "macro_f1": 58.46,
+      "flip": 12.8,
+      "n_changed": 500
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 966,
+      "macro_f1": 54.56
+    },
+    "mixed": {
+      "n": 182,
+      "macro_f1": 59.29
+    },
+    "native": {
+      "n": 202,
+      "macro_f1": 72.63
+    },
+    "other": {
+      "n": 2,
+      "macro_f1": 0.0
+    }
+  }
+}

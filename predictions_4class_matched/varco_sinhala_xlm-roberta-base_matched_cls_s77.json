@@ -1,0 +1,125 @@
+{
+  "dataset": "sinhala",
+  "model": "xlm-roberta-base",
+  "config": "cls",
+  "run": "matched_cls",
+  "seed": 77,
+  "protocol": "matched_80_10_10_single_model",
+  "args": {
+    "dataset": "sinhala",
+    "model": "xlm-roberta-base",
+    "config": "cls",
+    "seeds": [
+      8,
+      42,
+      77
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "test": {
+    "acc": 73.15,
+    "macro_f1": 55.8,
+    "weighted_f1": 73.72,
+    "macro_p": 60.55,
+    "macro_r": 56.88,
+    "per_class": {
+      "Neutral": {
+        "P": 84.52,
+        "R": 74.3,
+        "F1": 79.08
+      },
+      "Negative": {
+        "P": 65.18,
+        "R": 76.1,
+        "F1": 70.22
+      },
+      "Positive": {
+        "P": 42.51,
+        "R": 61.74,
+        "F1": 50.35
+      },
+      "Conflict": {
+        "P": 50.0,
+        "R": 15.38,
+        "F1": 23.53
+      }
+    },
+    "confusion": [
+      [
+        639,
+        132,
+        89,
+        0
+      ],
+      [
+        82,
+        277,
+        5,
+        0
+      ],
+      [
+        31,
+        11,
+        71,
+        2
+      ],
+      [
+        4,
+        5,
+        2,
+        2
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 55.77,
+      "flip": 7.53,
+      "n_changed": 146
+    },
+    "var_ood": {
+      "macro_f1": 55.81,
+      "flip": 7.81,
+      "n_changed": 64
+    },
+    "charnoise": {
+      "macro_f1": 54.97,
+      "flip": 10.8,
+      "n_changed": 500
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 966,
+      "macro_f1": 49.43
+    },
+    "mixed": {
+      "n": 182,
+      "macro_f1": 52.59
+    },
+    "native": {
+      "n": 202,
+      "macro_f1": 78.89
+    },
+    "other": {
+      "n": 2,
+      "macro_f1": 0.0
+    }
+  }
+}
