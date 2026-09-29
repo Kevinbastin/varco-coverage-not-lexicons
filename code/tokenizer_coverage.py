@@ -1,8 +1,15 @@
 """Tokenizer coverage diagnostic (Table II): unknown-token rate and fertility by script.
-Reference implementation written for this release. Small differences from Table II are
-possible if the original applied text cleaning before splitting.
 
-Usage: python3 tokenizer_coverage.py data.csv TEXT_COLUMN tokenizer [tokenizer ...]
+Reference implementation written for this release. Words are the whitespace-separated
+tokens of the sentence text. A word counts as Sinhala-script if it contains a character
+of the Sinhala block, and as Latin-script if it has no Sinhala character but at least one
+letter A-Z. On the released corpus it reproduces the unknown-token rates of Table II
+(mBERT 98.38% vs 98.37%; XLM-RoBERTa 1.72%) and XLM-RoBERTa's Sinhala-script fertility
+(1.98). Other fertility figures differ from Table II (mBERT Sinhala 1.23 vs 1.19, Latin
+1.79 vs 1.56; XLM-RoBERTa Latin 1.71 vs 1.49), probably because of how words were
+segmented or cleaned in the original computation.
+
+Usage: python3 tokenizer_coverage.py sentence-level-annotation.csv Sentence tokenizer [tokenizer ...]
 """
 import re, sys
 import pandas as pd
