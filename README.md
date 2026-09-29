@@ -4,7 +4,7 @@ Code and per-seed test predictions for "Coverage, Not Lexicons: When Character-L
 
 ## Data
 Not redistributed here.
-- NLPC-UOM Sinhala-English Code-Mixed-Code-Switched Dataset: https://huggingface.co/datasets/NLPC-UOM/Sinhala-English-Code-Mixed-Code-Switched-Dataset. File `sentence-level-annotation.csv`, 13,518 rows, MD5 `f93b2ee27c3f30b738d2f6667f721b71`.
+- NLPC-UOM Sinhala-English Code-Mixed-Code-Switched Dataset: https://huggingface.co/datasets/NLPC-UOM/Sinhala-English-Code-Mixed-Code-Switched-Dataset. File `sentence-level-annotation.csv`, 13,518 rows, MD5 `f93b2ee27c3f30b738d2f6667f721b71` (the file served at revision `4f054545a281a9bf44b3b4c18aa54c9e225cedc2` has the same checksum).
 - TamilMixSentiment (Chakravarthi et al., 2020).
 
 ## Layout
@@ -36,7 +36,7 @@ Tables III (lexicon tests, earlier recipe) and XVII (Tamil-English control) have
 ## Code
 - `code/notebook5abb1466ef.ipynb`: Kaggle notebook from the experiments.
 - `code/TAMIL_XLM_ROBERTA MODEL.ipynb`: notebook for the Tamil-English control.
-- `code/tokenizer_coverage.py`: reference implementation of the tokenizer-coverage diagnostic (Table II).
+- `code/tokenizer_coverage.py`: reference implementation of the tokenizer-coverage diagnostic (Table II). It reproduces the unknown-token rates (mBERT 98.38% vs 98.37%, XLM-R 1.72%) and XLM-R's Sinhala-script fertility. Other fertility figures differ from Table II (mBERT Sinhala 1.23 vs 1.19, Latin 1.79 vs 1.56; XLM-R Latin 1.71 vs 1.49), probably because of how words were segmented.
 - `code/lexicon_reference.py`: reference implementation of the lexicon construction in Section IV: the 49 seeds of Table XVIII and the matching rule. Written for this release from the settings of the original script; it is not the original run code.
 - `code/verify_tables.py`: recomputes Table VIII from `predictions/`.
 
