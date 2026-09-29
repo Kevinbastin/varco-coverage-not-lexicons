@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Code and predictions for: Coverage, Not Lexicons: When Character-Level Modeling Helps Sinhala-English Code-Mixed Sentiment Analysis"
+authors:
+  - family-names: Kattakayam
+    given-names: Kevin
+  - family-names: R
+    given-names: Hemalatha
+version: v1.0.1
+date-released: 2026-09-29
+license: MIT
+repository-code: "https://github.com/Kevinbastin/varco-coverage-not-lexicons"
