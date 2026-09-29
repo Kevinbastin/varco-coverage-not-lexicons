@@ -1,0 +1,161 @@
+{
+  "dataset": "sinhala",
+  "model": "xlm-roberta-base",
+  "config": "full",
+  "run": "full_wc0.5",
+  "seed": 45,
+  "args": {
+    "mode": "train",
+    "dataset": "sinhala",
+    "model": "xlm-roberta-base",
+    "config": "full",
+    "seeds": [
+      45,
+      46
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.5,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2,
+    "pairs": [],
+    "boot": 5000,
+    "llm": "Qwen/Qwen2.5-7B-Instruct",
+    "shots": 4
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 45,
+      "val_macro_f1": 75.31,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.3215,
+      "sec_per_epoch": 207.2
+    },
+    {
+      "fold": 2,
+      "seed": 45,
+      "val_macro_f1": 74.73,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.32,
+      "sec_per_epoch": 207.8
+    },
+    {
+      "fold": 3,
+      "seed": 45,
+      "val_macro_f1": 73.35,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.313,
+      "sec_per_epoch": 208.0
+    },
+    {
+      "fold": 4,
+      "seed": 45,
+      "val_macro_f1": 74.26,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.272,
+      "sec_per_epoch": 207.8
+    },
+    {
+      "fold": 5,
+      "seed": 45,
+      "val_macro_f1": 74.31,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.3048,
+      "sec_per_epoch": 208.1
+    }
+  ],
+  "test": {
+    "acc": 80.75,
+    "macro_f1": 75.33,
+    "weighted_f1": 80.89,
+    "macro_p": 74.82,
+    "macro_r": 76.02,
+    "per_class": {
+      "Neutral": {
+        "P": 87.32,
+        "R": 83.26,
+        "F1": 85.24
+      },
+      "Negative": {
+        "P": 71.83,
+        "R": 79.85,
+        "F1": 75.63
+      },
+      "Positive": {
+        "P": 65.32,
+        "R": 64.94,
+        "F1": 65.13
+      }
+    },
+    "confusion": [
+      [
+        1074,
+        163,
+        53
+      ],
+      [
+        103,
+        436,
+        7
+      ],
+      [
+        53,
+        8,
+        113
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 75.1,
+      "flip": 4.82,
+      "n_changed": 228
+    },
+    "var_ood": {
+      "macro_f1": 75.53,
+      "flip": 4.51,
+      "n_changed": 133
+    },
+    "charnoise": {
+      "macro_f1": 74.3,
+      "flip": 6.18,
+      "n_changed": 744
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 1440,
+      "macro_f1": 75.12
+    },
+    "mixed": {
+      "n": 269,
+      "macro_f1": 73.3
+    },
+    "native": {
+      "n": 298,
+      "macro_f1": 77.69
+    },
+    "other": {
+      "n": 3,
+      "macro_f1": 100.0
+    }
+  }
+}

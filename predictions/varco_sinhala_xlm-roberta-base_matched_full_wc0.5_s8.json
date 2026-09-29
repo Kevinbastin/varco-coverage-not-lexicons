@@ -1,0 +1,125 @@
+{
+  "dataset": "sinhala",
+  "model": "xlm-roberta-base",
+  "config": "full",
+  "run": "matched_full_wc0.5",
+  "seed": 8,
+  "protocol": "matched_80_10_10_single_model",
+  "args": {
+    "dataset": "sinhala",
+    "model": "xlm-roberta-base",
+    "config": "full",
+    "seeds": [
+      8,
+      42,
+      77
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.5,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "test": {
+    "acc": 77.88,
+    "macro_f1": 56.52,
+    "weighted_f1": 77.88,
+    "macro_p": 60.81,
+    "macro_r": 56.45,
+    "per_class": {
+      "Neutral": {
+        "P": 86.08,
+        "R": 81.28,
+        "F1": 83.61
+      },
+      "Negative": {
+        "P": 68.92,
+        "R": 78.57,
+        "F1": 73.43
+      },
+      "Positive": {
+        "P": 54.92,
+        "R": 58.26,
+        "F1": 56.54
+      },
+      "Conflict": {
+        "P": 33.33,
+        "R": 7.69,
+        "F1": 12.5
+      }
+    },
+    "confusion": [
+      [
+        699,
+        117,
+        43,
+        1
+      ],
+      [
+        68,
+        286,
+        9,
+        1
+      ],
+      [
+        40,
+        8,
+        67,
+        0
+      ],
+      [
+        5,
+        4,
+        3,
+        1
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 56.44,
+      "flip": 4.11,
+      "n_changed": 146
+    },
+    "var_ood": {
+      "macro_f1": 56.49,
+      "flip": 4.69,
+      "n_changed": 64
+    },
+    "charnoise": {
+      "macro_f1": 55.14,
+      "flip": 8.6,
+      "n_changed": 500
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 966,
+      "macro_f1": 54.51
+    },
+    "mixed": {
+      "n": 182,
+      "macro_f1": 55.53
+    },
+    "native": {
+      "n": 202,
+      "macro_f1": 48.54
+    },
+    "other": {
+      "n": 2,
+      "macro_f1": 33.33
+    }
+  }
+}

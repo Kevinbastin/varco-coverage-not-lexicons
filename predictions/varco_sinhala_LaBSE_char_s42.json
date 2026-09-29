@@ -1,0 +1,158 @@
+{
+  "dataset": "sinhala",
+  "model": "sentence-transformers/LaBSE",
+  "config": "char",
+  "run": "char",
+  "seed": 42,
+  "args": {
+    "mode": "train",
+    "dataset": "sinhala",
+    "model": "sentence-transformers/LaBSE",
+    "config": "char",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 42,
+      "val_macro_f1": 73.6,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.2168,
+      "sec_per_epoch": 193.2
+    },
+    {
+      "fold": 2,
+      "seed": 42,
+      "val_macro_f1": 73.88,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1751,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 3,
+      "seed": 42,
+      "val_macro_f1": 73.59,
+      "epoch": 2,
+      "collapsed": false,
+      "gate": 0.1915,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 4,
+      "seed": 42,
+      "val_macro_f1": 74.22,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1913,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 5,
+      "seed": 42,
+      "val_macro_f1": 72.55,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1866,
+      "sec_per_epoch": 193.5
+    }
+  ],
+  "test": {
+    "acc": 81.94,
+    "macro_f1": 75.96,
+    "weighted_f1": 82.01,
+    "macro_p": 75.64,
+    "macro_r": 76.33,
+    "per_class": {
+      "Neutral": {
+        "P": 87.54,
+        "R": 85.5,
+        "F1": 86.51
+      },
+      "Negative": {
+        "P": 75.0,
+        "R": 79.12,
+        "F1": 77.01
+      },
+      "Positive": {
+        "P": 64.37,
+        "R": 64.37,
+        "F1": 64.37
+      }
+    },
+    "confusion": [
+      [
+        1103,
+        132,
+        55
+      ],
+      [
+        107,
+        432,
+        7
+      ],
+      [
+        50,
+        12,
+        112
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 75.36,
+      "flip": 9.21,
+      "n_changed": 228
+    },
+    "var_ood": {
+      "macro_f1": 75.76,
+      "flip": 9.77,
+      "n_changed": 133
+    },
+    "charnoise": {
+      "macro_f1": 74.63,
+      "flip": 7.93,
+      "n_changed": 744
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 1440,
+      "macro_f1": 76.06
+    },
+    "mixed": {
+      "n": 269,
+      "macro_f1": 73.29
+    },
+    "native": {
+      "n": 298,
+      "macro_f1": 76.22
+    },
+    "other": {
+      "n": 3,
+      "macro_f1": 100.0
+    }
+  }
+}

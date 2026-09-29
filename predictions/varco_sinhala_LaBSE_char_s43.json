@@ -1,0 +1,158 @@
+{
+  "dataset": "sinhala",
+  "model": "sentence-transformers/LaBSE",
+  "config": "char",
+  "run": "char",
+  "seed": 43,
+  "args": {
+    "mode": "train",
+    "dataset": "sinhala",
+    "model": "sentence-transformers/LaBSE",
+    "config": "char",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 43,
+      "val_macro_f1": 74.65,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1532,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 2,
+      "seed": 43,
+      "val_macro_f1": 73.97,
+      "epoch": 2,
+      "collapsed": false,
+      "gate": 0.1876,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 3,
+      "seed": 43,
+      "val_macro_f1": 73.08,
+      "epoch": 1,
+      "collapsed": false,
+      "gate": 0.1521,
+      "sec_per_epoch": 193.1
+    },
+    {
+      "fold": 4,
+      "seed": 43,
+      "val_macro_f1": 74.07,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": 0.1632,
+      "sec_per_epoch": 193.5
+    },
+    {
+      "fold": 5,
+      "seed": 43,
+      "val_macro_f1": 73.45,
+      "epoch": 2,
+      "collapsed": false,
+      "gate": 0.1835,
+      "sec_per_epoch": 193.5
+    }
+  ],
+  "test": {
+    "acc": 81.84,
+    "macro_f1": 76.21,
+    "weighted_f1": 81.9,
+    "macro_p": 75.87,
+    "macro_r": 76.57,
+    "per_class": {
+      "Neutral": {
+        "P": 87.13,
+        "R": 85.58,
+        "F1": 86.35
+      },
+      "Negative": {
+        "P": 75.13,
+        "R": 78.02,
+        "F1": 76.55
+      },
+      "Positive": {
+        "P": 65.34,
+        "R": 66.09,
+        "F1": 65.71
+      }
+    },
+    "confusion": [
+      [
+        1104,
+        131,
+        55
+      ],
+      [
+        114,
+        426,
+        6
+      ],
+      [
+        49,
+        10,
+        115
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 75.74,
+      "flip": 7.02,
+      "n_changed": 228
+    },
+    "var_ood": {
+      "macro_f1": 76.06,
+      "flip": 5.26,
+      "n_changed": 133
+    },
+    "charnoise": {
+      "macro_f1": 75.8,
+      "flip": 7.39,
+      "n_changed": 744
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 1440,
+      "macro_f1": 76.47
+    },
+    "mixed": {
+      "n": 269,
+      "macro_f1": 72.45
+    },
+    "native": {
+      "n": 298,
+      "macro_f1": 76.39
+    },
+    "other": {
+      "n": 3,
+      "macro_f1": 100.0
+    }
+  }
+}

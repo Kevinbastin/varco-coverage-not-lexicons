@@ -1,0 +1,154 @@
+{
+  "dataset": "sinhala",
+  "model": "bert-base-multilingual-cased",
+  "config": "baseline",
+  "run": "baseline_translit",
+  "seed": 42,
+  "args": {
+    "mode": "train",
+    "dataset": "sinhala",
+    "model": "bert-base-multilingual-cased",
+    "config": "baseline",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": false,
+    "retries": 2
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 42,
+      "val_macro_f1": 70.6,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 106.9
+    },
+    {
+      "fold": 2,
+      "seed": 42,
+      "val_macro_f1": 69.71,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 107.4
+    },
+    {
+      "fold": 3,
+      "seed": 42,
+      "val_macro_f1": 68.18,
+      "epoch": 2,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 106.9
+    },
+    {
+      "fold": 4,
+      "seed": 42,
+      "val_macro_f1": 70.57,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 108.0
+    },
+    {
+      "fold": 5,
+      "seed": 42,
+      "val_macro_f1": 69.5,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 108.2
+    }
+  ],
+  "test": {
+    "acc": 77.16,
+    "macro_f1": 69.89,
+    "weighted_f1": 77.28,
+    "macro_p": 69.67,
+    "macro_r": 70.26,
+    "per_class": {
+      "Neutral": {
+        "P": 84.35,
+        "R": 81.09,
+        "F1": 82.69
+      },
+      "Negative": {
+        "P": 68.11,
+        "R": 75.09,
+        "F1": 71.43
+      },
+      "Positive": {
+        "P": 56.55,
+        "R": 54.6,
+        "F1": 55.56
+      }
+    },
+    "confusion": [
+      [
+        1046,
+        183,
+        61
+      ],
+      [
+        124,
+        410,
+        12
+      ],
+      [
+        70,
+        9,
+        95
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 69.44,
+      "flip": 9.61,
+      "n_changed": 489
+    },
+    "var_ood": {
+      "macro_f1": 69.63,
+      "flip": 6.51,
+      "n_changed": 215
+    },
+    "charnoise": {
+      "macro_f1": 69.11,
+      "flip": 9.2,
+      "n_changed": 989
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 2006,
+      "macro_f1": 69.87
+    },
+    "mixed": {
+      "n": 1,
+      "macro_f1": 100.0
+    },
+    "other": {
+      "n": 3,
+      "macro_f1": 100.0
+    }
+  }
+}

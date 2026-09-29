@@ -1,0 +1,158 @@
+{
+  "dataset": "sinhala",
+  "model": "NLPC-UOM/SinBERT-large",
+  "config": "baseline",
+  "run": "baseline",
+  "seed": 42,
+  "args": {
+    "mode": "train",
+    "dataset": "sinhala",
+    "model": "NLPC-UOM/SinBERT-large",
+    "config": "baseline",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "epochs": 3,
+    "batch": 16,
+    "lr": 2e-05,
+    "lr_new": 0.0005,
+    "dropout": 0.35,
+    "rho": 0.3,
+    "test_rho": 0.5,
+    "holdout": 0.3,
+    "noise_p": 0.15,
+    "alpha": 1.0,
+    "lam_lid": 0.3,
+    "lam_wc": 0.0,
+    "eps": 1.0,
+    "amp": true,
+    "adam8bit": false,
+    "grad_ckpt": true,
+    "retries": 2
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "seed": 42,
+      "val_macro_f1": 46.74,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 108.4
+    },
+    {
+      "fold": 2,
+      "seed": 42,
+      "val_macro_f1": 50.7,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 109.1
+    },
+    {
+      "fold": 3,
+      "seed": 42,
+      "val_macro_f1": 51.39,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 108.2
+    },
+    {
+      "fold": 4,
+      "seed": 42,
+      "val_macro_f1": 51.47,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 108.9
+    },
+    {
+      "fold": 5,
+      "seed": 42,
+      "val_macro_f1": 46.25,
+      "epoch": 3,
+      "collapsed": false,
+      "gate": null,
+      "sec_per_epoch": 107.2
+    }
+  ],
+  "test": {
+    "acc": 65.92,
+    "macro_f1": 51.32,
+    "weighted_f1": 64.43,
+    "macro_p": 54.33,
+    "macro_r": 49.72,
+    "per_class": {
+      "Neutral": {
+        "P": 71.91,
+        "R": 81.55,
+        "F1": 76.43
+      },
+      "Negative": {
+        "P": 53.27,
+        "R": 41.76,
+        "F1": 46.82
+      },
+      "Positive": {
+        "P": 37.82,
+        "R": 25.86,
+        "F1": 30.72
+      }
+    },
+    "confusion": [
+      [
+        1052,
+        177,
+        61
+      ],
+      [
+        305,
+        228,
+        13
+      ],
+      [
+        106,
+        23,
+        45
+      ]
+    ]
+  },
+  "robust": {
+    "var_id": {
+      "macro_f1": 51.4,
+      "flip": 3.51,
+      "n_changed": 228
+    },
+    "var_ood": {
+      "macro_f1": 51.32,
+      "flip": 0.0,
+      "n_changed": 133
+    },
+    "charnoise": {
+      "macro_f1": 51.3,
+      "flip": 3.49,
+      "n_changed": 744
+    }
+  },
+  "by_script": {
+    "latin": {
+      "n": 1440,
+      "macro_f1": 45.24
+    },
+    "mixed": {
+      "n": 269,
+      "macro_f1": 62.04
+    },
+    "native": {
+      "n": 298,
+      "macro_f1": 67.26
+    },
+    "other": {
+      "n": 3,
+      "macro_f1": 100.0
+    }
+  }
+}
